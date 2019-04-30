@@ -1,0 +1,205 @@
+/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/bootstrap/scss/bootstrap.scss';
+// variables can be declared and later reused
+$revature-orange-light: #f3a55d;
+$revature-orange: #f26925;
+$drew-orange: #f3a55d;
+$rounded-amount: 0.5em;
+
+// Small tablets and large smartphones (landscape view)
+$screen-sm-min: 576px;
+
+// Small tablets (portrait view)
+$screen-md-min: 768px;
+
+// Tablets and small desktops
+$screen-lg-min: 992px;
+
+// Large tablets and desktops
+$screen-xl-min: 1200px;
+
+// mixins are reusable styles that can be included in other places
+@mixin flex-col {
+  display: flex;
+  flex-direction: column;
+}
+
+@mixin rounded-top {
+  border-top-left-radius: $rounded-amount;
+  border-top-right-radius: $rounded-amount;
+}
+
+/* @include transition(all,2s,ease-out); */
+@mixin transition($what: all, $time: 0.2s, $how: ease-in-out) {
+  -webkit-transition: $what $time $how;
+  -moz-transition:    $what $time $how;
+  -ms-transition:     $what $time $how;
+  -o-transition:      $what $time $how;
+  transition:         $what $time $how;
+}
+
+// Small devices
+@mixin sm {
+  @media (min-width: #{$screen-sm-min}) {
+      @content;
+  }
+}
+
+// Medium devices
+@mixin md {
+  @media (min-width: #{$screen-md-min}) {
+      @content;
+  }
+}
+
+// Large devices
+@mixin lg {
+  @media (min-width: #{$screen-lg-min}) {
+      @content;
+  }
+}
+
+// Extra large devices
+@mixin xl {
+  @media (min-width: #{$screen-xl-min}) {
+      @content;
+  }
+}
+
+/*******************************************
+  Positioning
+*******************************************/
+.align-start {
+  align-self: flex-start
+}
+/********************************************
+  Shared
+********************************************/
+input:invalid:not(:valid) {
+  border-color: salmon;
+  box-shadow: 0 0 0.2rem 0.1rem salmon;
+}
+.cursor-hover:hover {
+  cursor: pointer;
+}
+
+.no-link:hover {
+  text-decoration: none;
+}
+
+.flex-package {
+  display:    flex;
+  flex-shrink: 0;
+}
+
+.rev-btn:not(.dropdown), .rev-btn > button.dropdown-toggle {
+  background-color: $revature-orange-light ;
+  border-color: $revature-orange-light;
+  color: black !important;
+  &:hover {
+    border-bottom-color: #565D61;
+    color: $revature-orange-light;
+  }
+  &:active {
+    background-color: $revature-orange-light;
+    color: #565D61;
+    box-shadow: 0 0 0 0.2rem rgba($revature-orange-light, 0.5) !important;
+  }
+  &:active, &:focus {
+    box-shadow: 0 0 0 0.2rem rgba($revature-orange-light, 0.5) !important;
+  } 
+
+}
+
+li > a.rev-btn-tab {
+  background-color: white;
+  border-color: $revature-orange-light;
+  color: black;
+  &:hover {
+    background-color: white;
+    border-color: $revature-orange-light;
+    color: $revature-orange-light;
+  }
+  &:active {
+    color: black;
+    box-shadow: 0 0 0 0.2rem rgba($revature-orange-light, 0.5);
+    border-color: $revature-orange-light
+  }
+  &:active, &:focus {
+    box-shadow: 0 0 0 0.2rem rgba($revature-orange-light, 0.5);
+  }
+}
+.rev-table-row:hover {
+  -webkit-box-shadow: inset 0px 0px 15px 5px $revature-orange-light;
+  -moz-box-shadow: inset 0px 0px 15px 5px $revature-orange-light;
+  box-shadow: inset 0px 0px 15px 5px $revature-orange-light;
+  cursor: pointer;
+}
+
+
+.rev-background-color {
+  background-color: $revature-orange-light;
+}
+
+.rev-color { 
+  color: $revature-orange;
+}
+
+.responsive-modal-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  @include md {
+    flex-direction: row;
+  }
+
+  .responsive-modal-row-item {
+    margin-right: 0.3em;
+    margin-bottom: 0.7em;
+  } 
+
+  textarea {
+    width: 100%;
+  }
+  
+}
+
+.dropdown-item { 
+  &:active {
+    background-color: $revature-orange-light;
+  }
+  &:focus {
+    outline-color: $revature-orange;
+  }
+  &:hover {
+    cursor: pointer;
+    background-color: $revature-orange-light;
+  }
+}
+
+.form-control {
+  &:focus {
+    border-color: $revature-orange-light;
+    box-shadow: 0 0 0.2rem 0.1rem $revature-orange-light;
+  }
+}
+
+.modal-dialog {
+  width: 100%;
+  max-width: none;
+  margin: 0 auto;
+
+  @include sm {
+    max-width: 90%;
+    margin: 1em auto;
+  }
+
+  @include md {
+    max-width: 70%;
+    margin: 2em auto;
+  }
+
+  @include lg { 
+    max-width: 900px;
+  }
+}

@@ -1,0 +1,70 @@
+@import '../../../partial.scss';
+/*****************************
+  NAV
+*****************************/
+
+.nav-dropdown {
+  background-color: unset;
+  border: unset;
+  color: black;
+  text-decoration: none;
+  &:hover, &:focus {
+    color: black;
+    text-decoration: none;
+  }
+  &:hover {
+    background-color: unset;
+    border: unset;
+    color: $revature-orange;
+    cursor: pointer;
+  }
+  &:active {
+    background-color: unset !important;
+    border: unset !important;
+    color: black !important;
+  }
+  &:active, &:focus {
+    box-shadow: 0 0 0 0.2rem rgba($revature-orange-light, 0.5);
+  }
+}
+
+.rev-logo {
+  width: auto;
+  height: 2em;
+  margin-right: 2em;
+}
+
+.margin-nav {
+  margin-right: 2em
+}
+
+
+.navbar-light .navbar-nav .nav-link:focus, .navbar-light .navbar-nav .nav-link:hover {
+  color: rgba(0,0,0,.7);
+}
+
+.navbar-expand-md .navbar-nav .nav-link {
+  padding-right: .75rem !important;
+  padding-left: .75rem !important;
+}
+
+.bg-light {
+  background-color: #ffffff !important;
+}
+
+.app-nav {
+  border-bottom: 1px solid #ffffff !important;
+  margin-bottom: 20px;
+  -webkit-box-shadow: 1px -12px 28px -1px rgba(0, 0, 0, 0.87);
+  -moz-box-shadow: 1px -12px 28px -1px rgba(0, 0, 0, 0.87);
+  box-shadow: 1px -12px 28px -1px rgba(0, 0, 0, 0.87);
+  background: -webkit-linear-gradient(right, #f8d6b6, #acc5c9);
+  background: -webkit-linear-gradient(right, #e7d6c7, #8bdde7);
+  background: -moz-linear-gradient(right, #e2d0be, #eaf1f1);
+  background: -o-linear-gradient(right, #eec5a0, #e1e9eb);
+  background: linear-gradient(to left, #f3a55d, #e1e7e7);
+}
+
+#examples-dropdown {
+  cursor: pointer;
+}
