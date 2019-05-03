@@ -8,6 +8,8 @@ import { NavComponent } from './components/nav/nav.component';
 import { ClickerComponent } from './components/clicker/clicker.component';
 import './include/include';
 import { reducers, metaReducers } from './reducers';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 
 @NgModule({
@@ -19,7 +21,8 @@ import { reducers, metaReducers } from './reducers';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    StoreModule.forRoot(reducers, {metaReducers})
+    StoreModule.forRoot(reducers, {metaReducers}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production })
   ],
   providers: [],
   bootstrap: [AppComponent]
