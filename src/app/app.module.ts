@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { StoreModule } from '@ngrx/store';
 import { NavComponent } from './components/nav/nav.component';
 import { ClickerComponent } from './components/clicker/clicker.component';
+import './include/include';
 
 @NgModule({
   declarations: [
