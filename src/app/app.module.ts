@@ -7,6 +7,7 @@ import { StoreModule } from '@ngrx/store';
 import { NavComponent } from './components/nav/nav.component';
 import { ClickerComponent } from './components/clicker/clicker.component';
 import './include/include';
+import { reducers, metaReducers } from './reducers';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import './include/include';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    StoreModule.forRoot(reducers, {metaReducers})
   ],
   providers: [],
   bootstrap: [AppComponent]

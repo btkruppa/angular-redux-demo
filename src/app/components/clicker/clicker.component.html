@@ -1,3 +1,4 @@
 <p>
-  clicker works!
+  clicks: {{(clicker$ | async)?.clicks}}
 </p>
+<button class="btn btn-primary" (click)="increment(1)">Increment</button>
