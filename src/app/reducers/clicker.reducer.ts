@@ -7,7 +7,10 @@ export const initialState = {
 export function clickerReducer(state = initialState, action) {
   switch (action.type) {
     case ClickerTypes.Update:
-      return state + action.payload;
+      return {
+        ...state,
+        clicks: state.clicks + action.payload
+      };
     case ClickerTypes.Reset:
       return initialState;
     default:

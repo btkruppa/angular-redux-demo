@@ -1,7 +1,7 @@
 import { clickerReducer } from './clicker.reducer';
 import { ActionReducer } from '@ngrx/store';
 import { storeLogger } from 'ngrx-store-logger';
-import { environment } from 'src/environments/environment.prod';
+import { environment } from 'src/environments/environment';
 
 export interface ClickerState {
   clicks: number;
