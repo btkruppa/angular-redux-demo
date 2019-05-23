@@ -1,3 +1,6 @@
+# Notes
+If you try adding the cognito code into your application you will need to install  `aws-amplify` `@types/node` and update your polyfills similar to mine and add "node" to types array in tsconfig.app.json
+
 # Resources
 
 [Their Documentation](https://ngrx.io/)
